@@ -1,0 +1,22 @@
+.header-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text{
+    letter-spacing: 1rem;
+    font-size: 3rem;
+    color: var(--light-purple);
+}
+
+.header-img-wrapper{
+    width: 300px;
+    height: 300px;
+}
+
+.header-img{
+    max-width: 100%;
+    max-height: 100%;
+}
