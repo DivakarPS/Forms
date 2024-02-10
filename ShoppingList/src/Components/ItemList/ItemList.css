@@ -1,3 +1,31 @@
 .shopping-items-wrapper{
     width: 100%;
 }
+
+.items-list{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.change-quantity{
+    padding: 1rem;
+    border-radius: 100%;
+}
+
+.add-item{
+    background-color: var(--light-blue);
+    color: white;
+    font-size: small;
+}
+
+.remove-item{
+    background-color: lightgray;
+    color: white;
+    font-size: small;
+}
+
+.change-quantity:hover{
+    cursor: pointer;
+    color: black;
+}
