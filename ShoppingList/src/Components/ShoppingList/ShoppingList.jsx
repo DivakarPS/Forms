@@ -1,5 +1,7 @@
 import './ShoppingList.css'
 
+import { shoppingItemsContext, shoppingDispatchContext } from '../../../Providers/ShoppingContext';
+
 import Header from "../Header/Header";
 import InputItem from "../InputItem/InputItem";
 import ItemList from '../ItemList/ItemList';
@@ -43,16 +45,20 @@ function ShoppingList() {
 
     return (
         <>
-            <ToastContainer/>
-            <Header />
-            <div className="current-shopping-list">
-                <InputItem addShoppingItem={addShoppingItem}/>
-                <ItemList 
-                    shoppingItems={shoppingItems}
-                    addQuantity={handleAddQuantity}
-                    removeQuantity={handleRemoveQuantity}
-                />
-            </div>
+            <shoppingItemsContext.Provider>
+                <shoppingDispatchContext.Provider>
+                    <ToastContainer/>
+                    <Header />
+                    <div className="current-shopping-list">
+                        <InputItem addShoppingItem={addShoppingItem}/>
+                        <ItemList 
+                            shoppingItems={shoppingItems}
+                            addQuantity={handleAddQuantity}
+                            removeQuantity={handleRemoveQuantity}
+                        />
+                    </div>
+                </shoppingDispatchContext.Provider>
+            </shoppingItemsContext.Provider>
         </>
     )
 }

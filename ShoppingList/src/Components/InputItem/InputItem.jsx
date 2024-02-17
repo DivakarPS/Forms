@@ -12,7 +12,6 @@ import { useForm } from 'react-hook-form'
 
 function InputItem({addShoppingItem}){
 
-    const [itemName, setItemName] = useState('')
     const { register, handleSubmit } = useForm()
 
     function handleFormSubmission(data){
@@ -22,9 +21,10 @@ function InputItem({addShoppingItem}){
         // setItemName('')
 
         console.log(data);
-        
+        addShoppingItem({id: uuid(), name: data.item1, quantity: 1});
+        showSuccess("Successfully added Item!")
     }
-    console.log({ ... register('item', { required: true, minLength: 3 })});
+    // console.log({ ... register('item', { required: true, minLength: 3 })});
     return (
         <div className="item-input-wrapper">
             <form onSubmit={handleSubmit(handleFormSubmission)}>
@@ -33,9 +33,9 @@ function InputItem({addShoppingItem}){
                     type="text" 
                     placeholder="Add An Item..."
                     // value={itemName}
-                    name="item"
+                    name="item1"
                     // onChange={(e) => setItemName(e.target.value)}
-                    { ... register('item', { required: true, minLength: 3 })}
+                    { ... register('item1', { required: true, minLength: 3 })}
                 />
                 <button className="add-item-button">
                     Add +
