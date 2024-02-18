@@ -45,14 +45,13 @@ function ShoppingList() {
 
     return (
         <>
-            <shoppingItemsContext.Provider>
-                <shoppingDispatchContext.Provider>
+            <shoppingItemsContext.Provider value={shoppingItems}>
+                <shoppingDispatchContext.Provider value={dispatch}>
                     <ToastContainer/>
                     <Header />
                     <div className="current-shopping-list">
                         <InputItem addShoppingItem={addShoppingItem}/>
                         <ItemList 
-                            shoppingItems={shoppingItems}
                             addQuantity={handleAddQuantity}
                             removeQuantity={handleRemoveQuantity}
                         />
